@@ -1,11 +1,115 @@
-<p>save-apartment works!</p>
-
-
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<form [formGroup]="myForm" class="pt-3" action="" (ngSubmit)="onSubmit()">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >كود الشقة</span
+    >
+    <input
+      type="text"
+      placeholder="كود الشقة"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="apartmentCode"
+    />
   </div>
-</div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">العنوان</span>
+    <input
+      type="text"
+      placeholder="العنوان"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="address"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >تاريخ الشراء</span
+    >
+    <input
+      type="text"
+      placeholder="تاريخ الشراء"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="purchaseDate"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >مبلغ الشراء</span
+    >
+    <input
+      type="text"
+      placeholder="مبلغ الشراء"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="purchaseAmount"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >مصاريف الشراء</span
+    >
+    <input
+      type="text"
+      placeholder="مصاريف الشراء"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="expenses"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >مبلغ البيع</span
+    >
+    <input
+      type="text"
+      placeholder="مصاريف الشراء"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="saleAmount"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >صافي الشقة</span
+    >
+    <input
+      type="text"
+      placeholder="صافي الشقة"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="netAmount"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >تاريخ البيع</span
+    >
+    <input
+      type="text"
+      placeholder="تاريخ البيع"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      formControlName="saleDate"
+    />
+  </div>
+
+  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+    إدخال
+  </button>
+</form>

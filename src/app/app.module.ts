@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { SaveApartmentComponent } from './components/save-apartment/save-apartment.component';
 import { UpdateApartmentComponent } from './components/update-apartment/update-apartment.component';
 import { DeleteApartmentComponent } from './components/delete-apartment/delete-apartment.component';
-import { ApartmentComponent } from './components/apartment/apartment.component';
 import { ApartmentDetailsComponent } from './components/apartment-details/apartment-details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,15 +19,27 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     SaveApartmentComponent,
     UpdateApartmentComponent,
     DeleteApartmentComponent,
-    ApartmentComponent,
     ApartmentDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
